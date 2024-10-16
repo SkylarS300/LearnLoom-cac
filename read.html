@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Skylar's Fire Project</title>
+<link rel = "stylesheet" href="style.css">
+
+<script>
+function reading() {
+  const text = "This is a sample text test. One two buckle my shoe. Three four out the door. Five six pick up sticks. Seven eight doing great." 
+  const words = text.split(' ')
+  const paragraphElement = document.getElementById("text");
+  const speech = new SpeechSynthesisUtterance(text)
+
+
+  let wordIndex = 0 // || localStorage.getItem('currentWordIndex')
+  speech.onboundary = (event) => { 
+  	if (event.name === 'word') {
+    	const wordSpan = document.createElement("span");
+      wordSpan.textContent = words[wordIndex];
+      wordSpan.style.backgroundColor = 'yellow';
+      // Clear the text and append the highlighted word
+      paragraphElement.innerHTML = ""; // Clear text
+      paragraphElement.appendChild(document.createTextNode(words.slice(0, wordIndex).join(" ") + ' '));
+      paragraphElement.appendChild(wordSpan);
+      paragraphElement.appendChild(document.createTextNode(' ' + words.slice(wordIndex + 1).join(' ')));
+      
+      wordIndex++
+    }
+  }
+
+// Start Speech
+speechSynthesis.speak(speech);
+}
+
+function saveprogress(userID, wordIndex){
+  fetch('/save-progress'), {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      userID: userID,
+      wordIndex: wordIndex
+    })
+  }
+
+}
+
+
+</script>
+</head>
+<body>
+    <p id = "text">"This is a sample text test. One two buckle my shoe. Three four out the door. Five six pick up sticks. Seven eight doing great."</p>
+    <button onClick = "reading()">Start Reading</button>
+</body>
+</html>

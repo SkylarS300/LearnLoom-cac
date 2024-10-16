@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Roboto:wght@400&display=swap" rel="stylesheet">
+    <title>Select a Book</title>
+    <style>
+        .book-cover {
+            width: 150px;
+            height: 200px;
+            cursor: pointer;
+            margin: 10px;
+        }
+        .book-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .book-title {
+            margin-top: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            max-width: 150px;
+            white-space: normal;
+            overflow: hidden;
+            text-align: center;
+            text-overflow: inherit;
+        }
+    </style>
+</head>
+<body>
+    <div id="navbar">
+        <a href="index.html" class="logo">
+            <img src="learnloom.png" style="width: 100px; height: 80px;" alt="LearnLoom Logo" />
+        </a>
+  
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="library.html">Library</a></li>
+          <li><a href="readingpal.html">Reading Pal</a></li>
+          <li><a href="grammar.html">Study Grammar</a></li>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+  
+        <a href="./login.html" class="login-button">Login</a>
+    </div>
+    <center>
+        <h1 style="margin-top: 3%;">Select a Book to Read:</h1>
+    </center>
+    <div id="bookContainer" class="book-container"></div>
+    
+    <script>
+        const books = [
+        {
+                title: "Pride and Prejudice",
+                author: "Jane Austen",
+                cover: "cover_pap.jpg",
+                index: 0
+            },
+            {
+                title: "Metamorphosis",
+                author: "Franz Kafka",
+                cover: "cover_m.jpg",
+                index: 1
+            },
+            {
+                title: "Frankenstein",
+                author: "Mary Shelley",
+                cover: "cover_frank.jpg",
+                index: 2
+            },
+            {
+                title: "Alice's Adventures in Wonderland",
+                author: "Lewis Carroll",
+                cover: "cover_alice.jpg",
+                index: 3
+            },
+            {
+                title: "The Wind in the Willows",
+                author: "Kenneth Grahame",
+                cover: "cover_witw.jpg",
+                index: 4
+            },
+            {
+                title: "Great Expectations",
+                author: "Charles Dickens",
+                cover: "cover_greatexp.jpg",
+                index: 5
+            },
+            {
+                title: "Jane Eyre",
+                author: "Charlotte Bronte",
+                cover: "cover_je.jpg",
+                index: 6
+            },
+            {
+                title: "Dracula",
+                author: "Bram Stoker",
+                cover: "cover_drac.jpg",
+                index: 7
+            },
+            {
+                title: "Oliver Twist",
+                author: "Charles Dickens",
+                cover: "cover_ot.jpg",
+                index: 8
+            },
+            {
+                title: "The Invisible Man",
+                author: "H. G. Wells",
+                cover: "cover_tim.jpg",
+                index: 9
+            },
+            {
+                title: "The Time Machine",
+                author: "H. G. Wells",
+                cover: "cover_ttm.jpg",
+                index: 10
+            },
+            {
+                title: "Wuthering Heights",
+                author: "Emily Bronte",
+                cover: "cover_wh.jpg",
+                index: 11
+            },
+        ];
+
+        function populateBooks() {
+            const bookContainer = document.getElementById('bookContainer');
+            books.forEach((book) => {
+                const bookWrapper = document.createElement('div');
+                const bookImage = document.createElement('img');
+                bookImage.src = book.cover;
+                bookImage.alt = `${book.title} by ${book.author}`;
+                bookImage.classList.add('book-cover');
+                bookImage.addEventListener('click', () => {
+                    window.location.href = `readingpal.html?bookIndex=${book.index}`;
+                });
+
+                const bookTitle = document.createElement('p');
+                bookTitle.textContent = book.title;
+                bookTitle.classList.add('book-title');
+
+                bookWrapper.appendChild(bookImage);
+                bookWrapper.appendChild(bookTitle);
+                bookContainer.appendChild(bookWrapper);
+            });
+        }
+
+        window.onload = populateBooks;
+    </script>
+</body>
+</html>

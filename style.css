@@ -1,0 +1,464 @@
+body{
+  background-color: #fffffff0;
+  font-family: 'Roboto', sans-serif; /* Roboto for body text */
+  padding: 0 30px; /* Adds 20px padding on both left and right sides */
+  margin: 0;
+}
+
+.main-content {
+  max-width: 1200px; /* Ensures content doesn’t get too wide */
+  margin: 0 auto;    /* Centers the main content */
+  padding: 0 30px;   /* Adds padding around the edges */
+}
+
+#navbar {
+  display: flex;
+  justify-content: space-between; /* Space between logo and links */
+  align-items: center;
+  padding: 0 20px; /* Adjust padding as needed */
+  background-color: white; /* Navbar background color */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  position: sticky; /* Sticks at the top */
+}
+
+/* Logo */
+#navbar .logo img {
+  display: flex; /* Adjust logo size */
+  align-items: center;
+}
+
+/* Navbar links */
+.nav-links {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  flex-grow: 1;
+}
+
+.nav-links li {
+  margin: 0 20px; /* Spacing between links */
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #333; /* Text color */
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #738AFD; /* Hover color */
+  transition: background-color 0.3s ease;
+}
+
+/* Login button */
+.login-button {
+  margin-left: auto;
+  background-color: #738AFD;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.login-button:hover {
+  background-color: #566bbf; /* Slightly darker on hover */
+}
+
+h1, h2, h3 {
+  font-family: 'Poppins', sans-serif; /* Poppins for headers */
+  color: #333;
+}
+
+p {
+  color: #666;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+#header .login {
+  float: right;
+}
+#header li{
+  text-align: center;
+  color: white;
+  list-style: none;
+  padding: 14px 16px;
+  text-decoration: none;
+  display: inline;
+
+}
+#header a{
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+}
+
+#li{
+  display: inline;
+  
+}
+
+
+/* Intro Section Styling */
+#intro-section {
+  text-align: center;
+  padding: 50px 20px;
+  background-color: white;
+}
+
+#intro-section h1 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 36px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+#intro-section p {
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  color: #666;
+  margin-bottom: 40px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* CTA Button */
+.cta-button {
+  background-color: #7b91f8; /* Primary color */
+  color: white;
+  padding: 15px 30px;
+  border-radius: 8px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #5f78d4; /* Darker shade on hover */
+}
+
+/* Steps Section */
+#steps-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  background-color: #1d1d2b; /* Dark background */
+  padding: 40px 20px;
+  color: white;
+  text-align: center;
+}
+
+.step {
+  flex: 1;
+  margin: 0 20px; /* Spacing between the steps */
+}
+
+.step-number {
+  background-color: #7b91f8; /* Match with your primary color */
+  color: white;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  font-size: 24px;
+  margin: 0 auto 20px auto; /* Centered circle */
+}
+
+.step h3 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: white;
+}
+
+.step p {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  #steps-section {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .step {
+    margin-bottom: 40px; /* Add spacing between steps on mobile */
+  }
+}
+
+/* Placeholder for the video */
+.video-placeholder {
+  background-color: #f0f0f0;
+  height: 500px;
+  width: 830px;
+  margin: 4% auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+  color: #666;
+  border-radius: 8px;
+}
+
+/* Divider Styling */
+.divider {
+  width: 100%;
+  height: 1px; /* Thickness of the divider */
+  background-color: #e0e0e0; /* Color of the divider */
+  margin: 60px 0; /* Adds space above and below the divider */
+}
+
+
+/* Small Features Button Styling */
+.features-button {
+  display: inline-block;
+  background-color: #e8e8f7; /* Light background color */
+  color: #738AFD; /* Primary color for the text */
+  padding: 5px 15px;
+  border-radius: 20px; /* Rounded edges */
+  font-family: 'Poppins', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 20px; /* Space below the button */
+}
+
+#features {
+  text-align: center;
+  padding: 40px 0;
+  background-color: white;
+}
+
+#features h2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 32px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+#features p {
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  color: #666;
+  margin-bottom: 40px;
+}
+
+/* Features Grid */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns layout */
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Style for the centered feature */
+.feature:nth-child(4) {
+  grid-column: 2 / 3; /* Span the second column to center the feature */
+}
+
+/* Individual Feature Styling */
+.feature h3 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.feature p {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  color: #666;
+  line-height: 1.6;
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+  .features-grid {
+    grid-template-columns: 1fr; /* Stack features in one column on small screens */
+  }
+}
+
+
+
+/* Tiny Divider Line Styling */
+.faq-divider {
+  position: relative;
+  left: 0;
+  width: 100vw; /* Full viewport width */
+  height: 1px; /* Thin line */
+  background-color: #e0e0e0; /* Light gray color */
+  margin-bottom: 20px; /* Space below the divider */
+}
+
+/* Styling the FAQ button */
+.faq-button {
+  display: inline-block;
+  background-color: #e8e8f7; /* Light background color */
+  color: #738AFD; /* Primary color for the text */
+  padding: 5px 15px;
+  border-radius: 20px; /* Rounded edges */
+  font-family: 'Poppins', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 20px; /* Spacing below the button */
+}  
+
+#faq {
+  width: 100%; /* Make the parent container full-width */
+  text-align: center;
+  margin: 40px auto;
+  padding: 40px 20px; 
+  max-width: 1200px;
+}
+
+#faq h2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 32px;
+  font-weight: 600;
+  color: #333;
+}
+
+#faq p {
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  color: #666;
+  margin-bottom: 40px;
+}
+
+/* Container for FAQ columns */
+.faq-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 equal columns */
+  gap: 40px;
+  padding: 0 30px;
+}
+
+/* Individual columns */
+.faq-column h3 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.faq-column p {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+/* Links in the FAQ section */
+.faq-column a {
+  color: #738AFD;
+  text-decoration: none;
+}
+
+.faq-column a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 768px) {
+  .faq-container {
+    grid-template-columns: 1fr; /* Stacks the columns */
+    padding: 0 20px;
+  }
+}
+
+/* Divider Styling */
+.footer-divider {
+  width: 100vw; /* Full width of viewport */
+  height: 1px; /* Adjust thickness */
+  background-color: #e0e0e0; /* Light gray color for the divider */
+  margin: 55px 0 0 0; /* Center the divider and add spacing */
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+#footer-cta {
+  text-align: center;
+  padding: 40px 20px;
+  background-color: white;
+  margin-top: 40px;
+  padding-bottom: 60;
+  border-top: 1px solid #e0e0e0; /* Light border at the top */
+}
+
+/* Container for Text and Button */
+.cta-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Text Section */
+.cta-text h3 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.cta-text p {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  color: #666;
+  margin: 0;
+}
+
+/* Call-to-Action Button */
+.cta-button {
+  background-color: #738AFD; /* Your primary color */
+  color: white;
+  padding: 15px 30px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #5a6fd1; /* Darker shade on hover */
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+  .cta-container {
+    flex-direction: column;
+    text-align: center;
+  }
+  .cta-button {
+    margin-top: 20px;
+  }
+}

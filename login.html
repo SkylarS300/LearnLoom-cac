@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>LearnLoom - Login</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Roboto:wght@400&display=swap" rel="stylesheet">
+
+    <style>
+        body{
+  background-color: #fffffff0;
+  font-family: 'Roboto', sans-serif; /* Roboto for body text */
+  padding: 0 30px; /* Adds 20px padding on both left and right sides */
+  margin: 0;
+}
+
+.main-content {
+  max-width: 1200px; /* Ensures content doesn’t get too wide */
+  margin: 0 auto;    /* Centers the main content */
+  padding: 0 30px;   /* Adds padding around the edges */
+}
+
+  /* Sign-in Form Container */
+  .sign-in-container {
+    max-width: 400px;
+    margin: 100px auto;
+    padding: 40px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    background-color: #fff;
+    text-align: center;
+  }
+  
+  .sign-in-container h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 30px;
+  }
+  
+  .sign-in-container label {
+    display: block;
+    text-align: left;
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: #333;
+  }
+  
+  .sign-in-container input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  .sign-in-container .forgot-password {
+    text-align: right;
+    margin-bottom: 30px;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .sign-in-container .forgot-password a {
+    text-decoration: none;
+    color: #738AFD;
+  }
+  
+  .sign-in-container .forgot-password a:hover {
+    text-decoration: underline;
+  }
+  
+  .sign-in-button {
+    width: 100%;
+    background-color: #738AFD;
+    color: white;
+    padding: 12px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .sign-in-button:hover {
+    background-color: #566bbf;
+  }
+  
+  .sign-in-container p {
+    margin-top: 20px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+  }
+  
+  .sign-in-container p a {
+    color: #738AFD;
+    text-decoration: none;
+  }
+  
+  .sign-in-container p a:hover {
+    text-decoration: underline;
+  }
+
+  
+    </style>
+</head>
+<body>
+    <div id = "navbar">
+        <a href = "index.html" class = "logo">
+          <img src="learnloom.png" style="width: 100px; height: 80px;" alt = "LearnLoom Logo" />
+        </a>
+  
+        <ul class = "nav-links">
+          <li><a href = "index.html">Home</a></li>
+          <li><a href = "library.html">Library</a></li>
+          <li><a href = "readingpal.html">Reading Pal</a></li>
+          <li><a href = "grammar.html">Study Grammar</a></li>
+          <li><a href = "#features">Features</a></li>
+          <li><a href = "#faq">FAQ</a></li>
+        </ul>
+  
+  
+        <a href="./login.html" class = "login-button">Login</a>
+      </div>
+
+    <!-- Sign-in Form Section -->
+    <div class="sign-in-container">
+        <h2>Log in</h2>
+
+        <form action = "your-action-page" method = "POST">
+            <label for = "email">Email Address</label>
+            <input type = "email" id = "email" name = "email" placeholder="Enter your email" required>
+
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" placeholder="Enter your password" required>
+            
+            <div class="forgot-password">
+                <a href="#">Forgot password?</a>
+            </div>
+
+            <button type="submit" class="sign-in-button">Sign up</button>
+
+        </form>
+
+        <p>Don't have an account yet? <a href="signup.html">Sign up</a>.</p>
+    </div>
+
+    
+</body>
+</html>

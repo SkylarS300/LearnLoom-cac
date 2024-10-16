@@ -1,0 +1,194 @@
+/* General styles */
+
+#navbar {
+  display: flex;
+  justify-content: space-between; /* Space between logo and links */
+  align-items: center;
+  padding: 0 20px; /* Adjust padding as needed */
+  background-color: white; /* Navbar background color */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  position: sticky; /* Sticks at the top */
+}
+
+/* Logo */
+#navbar .logo img {
+  display: flex; /* Adjust logo size */
+  align-items: center;
+}
+
+/* Navbar links */
+.nav-links {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  flex-grow: 1;
+}
+
+.nav-links li {
+  margin: 0 20px; /* Spacing between links */
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #333; /* Text color */
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #738AFD; /* Hover color */
+  transition: background-color 0.3s ease;
+}
+
+/* Login button */
+.login-button {
+  margin-left: auto;
+  background-color: #738AFD;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.login-button:hover {
+  background-color: #566bbf; /* Slightly darker on hover */
+}
+
+body {
+    background-color: #fffffff0;
+    font-family: 'Roboto', sans-serif;
+    padding: 0 30px;
+    margin: 0;
+}
+
+h1, h2 {
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    color: #333;
+}
+
+#bookPopup {
+    padding: 20px;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 80%; /* Increase the width */
+    margin: 20px auto;
+    background-color: #f9f9f9;
+}
+
+#text {
+    font-size: 18px;
+    line-height: 1.6;
+    max-height: 1000px; /* Increase the height */
+    width: 93%; /* Ensure it takes full width within its container */
+    height: 600px; /* Set a larger height */
+    overflow-y: auto;
+    padding: 20px; /* Add more padding for better spacing */
+    border: 1px solid #ddd;
+    background-color: #fff;
+    white-space: pre-line;
+    margin-bottom: 20px; /* Add space from the control buttons */
+}
+
+
+.control-buttons {
+    display: flex;
+    justify-content: space-evenly; /* Add space between the buttons */
+    margin-bottom: 30px; /* Space between text and buttons */
+}
+
+.chapter-nav {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.chapter-button {
+    padding: 15px 30px; /* Increased padding for chapter buttons */
+    font-size: 18px; /* Increased font size */
+}
+
+button {
+    padding: 15px 25px; /* Increased padding for larger buttons */
+    border: none;
+    background-color: #738AFD;
+    color: white;
+    border-radius: 20px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px; /* Increased font size */
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #566bbf;
+}
+
+.settings-section {
+    background-color: #d5c8ff;
+    padding: 20px;
+    margin: 20px auto;
+    width: 80%; /* Align the settings section with the text section */
+    border-radius: 10px;
+}
+
+.control-settings {
+    margin-bottom: 20px;
+}
+
+.highlight-color {
+    display: flex;
+    justify-content: space-between;
+    width: 120px;
+}
+
+.color {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.red { background-color: red; }
+.blue { background-color: blue; }
+.green { background-color: green; }
+.yellow { background-color: yellow; }
+.orange { background-color: orange; }
+
+.zoom-controls {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    visibility: visible; /* Make sure the controls are visible */
+    margin-bottom: 20px;
+}
+
+.zoom-button {
+    background-color: #7b91f8; /* Primary color */
+    color: white;
+    padding: 15px 30px;
+    border-radius: 8px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+  }
+
+input[type="range"] {
+    width: 100%;
+    height: 5px;
+    background: #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+}
