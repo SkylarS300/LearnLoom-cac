@@ -86,9 +86,8 @@ h1, h2 {
 #text {
     font-size: 18px;
     line-height: 1.6;
-    max-height: 1000px; /* Increase the height */
     width: 93%; /* Ensure it takes full width within its container */
-    height: 600px; /* Set a larger height */
+    height: 40%; /* Set a larger height */
     overflow-y: auto;
     padding: 20px; /* Add more padding for better spacing */
     border: 1px solid #ddd;
