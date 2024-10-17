@@ -116,8 +116,8 @@
           <li><a href = "library.html">Library</a></li>
           <li><a href = "readingpal.html">Reading Pal</a></li>
           <li><a href = "grammar.html">Study Grammar</a></li>
-          <li><a href = "index.html#features">Features</a></li>
-          <li><a href = "index.html#faq">FAQ</a></li>
+          <li><a href = "#features">Features</a></li>
+          <li><a href = "#faq">FAQ</a></li>
         </ul>
   
   
@@ -128,10 +128,8 @@
         <div class="sign-in-container">
             <h2>Sign Up</h2>
     
-            <form action = "your-action-page" method = "POST">
-                <label for="user-id">User ID</label>
-                <input type="text" id="user-id" name="user-id" placeholder="Enter your User ID" required>
-                
+            <form id = "signupForm" method = "POST">
+
                 <label for = "email">Email Address</label>
                 <input type = "email" id = "email" name = "email" placeholder="Enter your email" required>
     
@@ -139,12 +137,12 @@
                 <input type="password" id="password" name="password" placeholder="Enter your password" required>
             
             
-                <button type="submit" class="sign-in-button">Log in</button>
+                <button type="submit" class="sign-in-button">Sign Up</button>
             </form>
     
             <p>Already have an account? <a href="login.html">Log in</a>.</p>
         </div>
 
-    
+    <script src="login.js"></script>
 </body>
 </html>
