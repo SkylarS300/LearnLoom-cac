@@ -205,19 +205,21 @@ p {
   }
 }
 
-/* Placeholder for the video */
-.video-placeholder {
-  background-color: #f0f0f0;
-  height: 500px;
-  width: 830px;
-  margin: 4% auto;
+/* Adjusting the GIF Container and Size */
+.gif-container {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: 'Poppins', sans-serif;
-  font-size: 18px;
-  color: #666;
-  border-radius: 8px;
+  justify-content: center;  /* Center the GIF horizontally */
+  width: 100%;  /* Full width of the container */
+  max-width: 1000px;  /* Increase maximum width for larger screens */
+  margin: 50px auto;  /* Center the container on the page with space above and below */
+}
+
+.responsive-gif {
+  width: 100%;  /* Ensure the GIF fills the container */
+  max-width: 1400px;  /* Increase max-width to allow the GIF to be bigger */
+  height: auto;  /* Maintain aspect ratio */
+  margin: 0 auto;  /* Center the GIF */
+  display: block;
 }
 
 /* Divider Styling */
@@ -448,8 +450,10 @@ p {
   transition: background-color 0.3s ease;
 }
 
-.cta-button:hover {
-  background-color: #5a6fd1; /* Darker shade on hover */
+
+/* Only for the Get Started button */
+.get-started-btn {
+  margin-bottom: 100px; /* Adjust this to add space only below the Get Started button */
 }
 
 /* Responsive Design for Smaller Screens */
@@ -460,5 +464,6 @@ p {
   }
   .cta-button {
     margin-top: 20px;
+    padding-bottom: 30px;
   }
 }
