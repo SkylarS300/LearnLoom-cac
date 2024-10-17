@@ -69,6 +69,7 @@ const books = [{
 
 ];
 
+let highlightedColor = 'yellow';
 let currentBook = null;
 let currentChapterIndex = 0;
 let utterance = null;
@@ -142,6 +143,20 @@ function readText() {
     speakNextParagraph();
 }
 
+// Function to update highlightedColor when a color is selected
+function updateHighlightColor(color) {
+    highlightedColor = color;
+    console.log("Highlight color updated to:", highlightedColor);
+}
+
+// Add event listeners to all the color elements
+document.querySelectorAll('.highlight-color .color').forEach(colorElement => {
+    colorElement.addEventListener('click', function () {
+        const selectedColor = window.getComputedStyle(this).backgroundColor;
+        updateHighlightColor(selectedColor);
+    });
+});
+
 // Function to highlight the currently spoken word
 function highlightWord(wordIndex, words) {
     const paragraphElement = document.getElementById('text');
@@ -159,7 +174,7 @@ function highlightWord(wordIndex, words) {
     const beforeSpan = document.createTextNode(beforeWord);
     const highlightSpan = document.createElement('span');
     highlightSpan.textContent = currentWord;
-    highlightSpan.style.backgroundColor = 'yellow'; // Highlighting the word
+    highlightSpan.style.backgroundColor = highlightedColor; // Highlighting the word
     const afterSpan = document.createTextNode(afterWord);
 
     // Append the fragments to the paragraph element
@@ -167,7 +182,6 @@ function highlightWord(wordIndex, words) {
     paragraphElement.appendChild(highlightSpan);
     paragraphElement.appendChild(afterSpan);
 }
-
 
 // Start reading the current chapter
 function startReading() {
