@@ -159,7 +159,7 @@ const quizzes = {
       }
     ]
   },
-  "VerbTenses": {
+  "verbTenses": {
     title: "Verb Tenses",
     subConcepts: [
       {
