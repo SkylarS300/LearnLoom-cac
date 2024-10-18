@@ -302,6 +302,9 @@ p {
   }
 }
 
+.textContainer {
+  padding: 50px;
+}
 
 
 /* Tiny Divider Line Styling */
