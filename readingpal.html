@@ -11,59 +11,40 @@
 
 <body>
 
-    <div id="navbar">
-        <a href="index.html" class="logo">
-            <img src="learnloom.png" style="width: 100px; height: 80px;" alt="LearnLoom Logo" />
-        </a>
-
-        <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="library.html">Library</a></li>
-            <li><a href="readingpal.html">Reading Pal</a></li>
-            <li><a href="grammar.html">Study Grammar</a></li>
-            <li><a href="index.html#features">Features</a></li>
-            <li><a href="index.html#faq">FAQ</a></li>
-        </ul>
-
-        <a href="./login.html" class="login-button">Login</a>
-    </div>
-
     <h1 id="bookTitle">Book Title</h1>
     <div id="bookPopup">
         <button class="close-btn" onclick="goBack()">&#x2716;</button>
-        <h2 id="chapterTitle">Chapter Title</h2>
-        <div id="text">Select a book from the library for chapter text to appear here.</div>
-        <div class="control-buttons">
-            <button onclick="startReading()">Start Reading</button>
-            <button onclick="pauseReading()">Pause</button>
-            <button onclick="resumeReading()">Resume</button>
-        </div>
-        <br><br>
-        <div class="chapter-nav">
-            <button id="prevChapter">Previous Chapter</button>
-            <button id="nextChapter">Next Chapter</button>
-        </div>
-    </div>
-
-    <div class="settings-section">
-        <div class="control-settings">
-            <label for="fontSize">Font Size</label>
-            <input type="range" id="fontSize" name="fontSize" min="10" max="40">
-        </div>
-
-        <div class="control-settings">
-            <label>Highlight Color</label>
-            <div class="highlight-color">
-                <div class="color red"></div>
-                <div class="color blue"></div>
-                <div class="color green"></div>
-                <div class="color yellow"></div>
-                <div class="color orange"></div>
+            <h2 id="chapterTitle">Chapter Title</h2>
+            <div id="text">The chapter text will appear here after selecting a book from the library.</div>
+            <div class="control-buttons">
+                <button onclick="startReading()">Start Reading</button>
+                <button onclick="pauseReading()">Pause</button>
+                <button onclick="resumeReading()">Resume</button>
+                <button onclick="stopReading()">Stop</button>
             </div>
-        </div>
+            
+            <div class="chapter-nav">
+                <button id="prevChapter">Previous Chapter</button>
 
+                <div class="settings-section">
+                    <label for="fontSize">Font Size</label>
+                    <input type="range" id="fontSize" name="fontSize" min="10" max="40">
+            
+                    <label>Highlight Color</label>
+                    <div class="highlight-color">
+                        <div class="color red"></div>
+                        <div class="color blue"></div>
+                        <div class="color green"></div>
+                        <div class="color yellow"></div>
+                        <div class="color orange"></div>
+                    </div>
+                </div>
+
+                <button id="nextChapter">Next Chapter</button>
+            </div>
     </div>
 
+   
     <script src="readingpal.js"></script>
 </body>
 
