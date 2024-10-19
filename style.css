@@ -210,12 +210,11 @@ p {
 
 /* Adjusting the GIF Container and Size */
 .gif-container {
-  padding-bottom: 70px;
   display: flex;
   justify-content: center;  /* Center the GIF horizontally */
   width: 100%;  /* Full width of the container */
   max-width: 1000px;  /* Increase maximum width for larger screens */
-  margin: 10px auto;  /* Center the container on the page with space above and below */
+  margin: 50px auto;  /* Center the container on the page with space above and below */
 }
 
 .responsive-gif {
@@ -509,7 +508,7 @@ p {
 
 /* Only for the Get Started button */
 .get-started-btn {
-  margin-bottom: 100px; /* Adjust this to add space only below the Get Started button */
+  margin-bottom: 0px; /* Adjust this to add space only below the Get Started button */
 }
 
 /* Responsive Design for Smaller Screens */
