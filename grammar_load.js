@@ -320,6 +320,10 @@ const quizzes = {
 };
 
 var selectedCategory = null
+window.onload = function() {
+  // Ensure the textContainer is hidden when the page loads
+  document.getElementById("textContainer").style.display = "none";
+};
 
 // Object to store user answers
 let userAnswers = {};
@@ -379,6 +383,7 @@ function saveUserAnswers() {
 
 // Function to generate the quiz dynamically
 function generateQuestion(questions) {
+  document.getElementById("textContainer").style.display = "block";
   selectedCategory = questions
   questions = selectedCategory.questions
   const quizContainer = document.getElementById('textContainer');
