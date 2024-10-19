@@ -5,10 +5,13 @@ body{
   margin: 0;
 }
 
-.main-content {
-  max-width: 1200px; /* Ensures content doesn’t get too wide */
-  margin: 0 auto;    /* Centers the main content */
-  padding: 0 30px;   /* Adds padding around the edges */
+
+#main-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center the content vertically */
+  align-items: center;
+  min-height: 100vh; /* Ensure it takes up the full height of the viewport */
 }
 
 #navbar {
@@ -302,10 +305,59 @@ p {
   }
 }
 
-.textContainer {
-  padding: 50px;
+/* Centered quiz container, ensuring no overlap */
+#textContainer {
+  position: absolute; /* Absolute positioning to place it on the right */
+  right: 450px; /* 50px from the right edge */
+  top: 150px; /* Adjust top position as needed */
+  width: 700px; /* Set a fixed width */
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
 }
 
+#main-content {
+  display: block; /* Block layout so sections are left-aligned */
+  width: 60%; /* Ensure it takes up the full width */
+  padding-left: 30px; /* Remove any padding affecting alignment */
+}
+
+#sentenceStructure, #punctuation, #commonGrammarMistakes, #verbTenses, #wordUsage, #writingStyle {
+  text-align: left; /* Ensure the sections are aligned left */
+  margin-bottom: 20px; /* Add space between sections */
+}
+
+/* Consistent font for text containers */
+.textContainer {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333;
+  padding: 20px;
+  text-align: center;
+}
+
+#sentenceStructure, #punctuation, #commonGrammarMistakes, #verbTenses, #wordUsage, #writingStyle {
+  margin-bottom: 20px; /* Add space between sections */
+}
+
+
+/* Styling for subsection links */
+.subsection-link {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #738AFD;
+  text-decoration: none;
+}
+
+.subsection-link:hover {
+  text-decoration: underline;
+}
 
 /* Tiny Divider Line Styling */
 .faq-divider {
