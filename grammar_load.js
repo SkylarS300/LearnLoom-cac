@@ -255,11 +255,11 @@ const quizzes = {
           { type: "multiple-choice", question: "Which is an antonym for 'cold'?", choices: ["hot", "cool", "warm"], correctAnswer: 0, explanation: "'Hot' is an antonym for 'cold.'" },
           { type: "short-response", question: "What’s a synonym for 'big'?", correctAnswer: "large", explanation: "'Large' is a synonym for 'big.'" },
           { type: "multiple-choice", question: "Choose an antonym for 'fast':", choices: ["slow", "quick", "swift"], correctAnswer: 0, explanation: "'Slow' is an antonym for 'fast.'" },
-          { type: "multiple-choice", question: "Fill in the blank with a synonym: 'She is very _____.'", choices: ["intelligent", "dumb", "unkind"], correctAnswer: 0, explanation: "'Intelligent' is a synonym for 'smart.'" },
+          { type: "multiple-choice", question: "Fill in the blank with a synonym for 'smart': 'She is very _____.'", choices: ["intelligent", "dumb", "unkind"], correctAnswer: 0, explanation: "'Intelligent' is a synonym for 'smart.'" },
           { type: "short-response", question: "What’s an antonym for 'loud'?", correctAnswer: "quiet", explanation: "'Quiet' is an antonym for 'loud.'" },
           { type: "multiple-choice", question: "Choose a synonym for 'small':", choices: ["tiny", "large", "huge"], correctAnswer: 0, explanation: "'Tiny' is a synonym for 'small.'" },
           { type: "multiple-choice", question: "Which is an antonym for 'bright'?", choices: ["light", "dark", "sunny"], correctAnswer: 1, explanation: "'Dark' is an antonym for 'bright.'" },
-          { type: "multiple-choice", question: "Fill in the blank with an antonym: 'The movie was very _____.'", choices: ["exciting", "boring"], correctAnswer: 1, explanation: "'Boring' is an antonym for 'exciting.'" },
+          { type: "multiple-choice", question: "Fill in the blank with an antonym for 'fun': 'The movie was very _____.'", choices: ["exciting", "boring"], correctAnswer: 1, explanation: "'Boring' is an antonym for 'exciting.'" },
           { type: "short-response", question: "What’s a synonym for 'beautiful'?", correctAnswer: "gorgeous", explanation: "'Gorgeous' is a synonym for 'beautiful.'" }
         ]
       }
@@ -320,28 +320,80 @@ const quizzes = {
   }
 };
 
-
-// dummy function to check questions
-// ADD MORE HERE ITS NOT DONE!!!!!!!!!!!
-function checkQuestions(event) {
-  event.preventDefault();
-  // ADD REAL CODE HERE
-  // some way to display correct/incorrect
-
-  console.log("Questions Checked - ADD REAL CODE")
-  return false;
-}
-
 var selectedCategory = null
 
-function generateQuestion(questions) {
+// Object to store user answers
+let userAnswers = {};
 
+// Function to check user's selected answers and compare with correct answers
+function checkQuestions(event) {
+  event.preventDefault(); // Prevent the form from refreshing the page
+  
+  const questions = selectedCategory.questions; // Example: checking "Simple Sentences" subConcept
+  let allCorrect = true; // Variable to track if all answers are correct
+
+  // Loop through all the questions
+  questions.forEach((question, index) => {
+    const userAnswerElement = document.querySelector(`input[name="q${index}"]:checked`);
+    const explanationDiv = document.getElementById(`explanation-${index}`);
+
+    if (userAnswerElement) {
+      userAnswer = parseInt(userAnswerElement.value); // Parse as integer for multiple-choice
+    
+      // Save the user's selected answer
+      userAnswers[`q${index}`] = userAnswer;
+    
+      // Compare the selected answer with the correct answer
+      const correctAnswer = question.correctAnswer;
+    
+        // For multiple-choice, compare as integers
+        if (userAnswer === correctAnswer) {
+          explanationDiv.textContent = "Correct!";
+          explanationDiv.style.color = "green";
+        } else {
+          allCorrect = false;
+          explanationDiv.textContent = `Incorrect: ${question.explanation}`;
+          explanationDiv.style.color = "red";
+        }
+      
+    } else {
+      // If no answer was selected, prompt the user to select an answer
+      allCorrect = false;
+      explanationDiv.textContent = "Please provide an answer!";
+      explanationDiv.style.color = "orange";
+    }
+  });
+
+  // Optional: If all questions are correct, you can display a message or take some action
+  if (allCorrect) {
+    alert("Congratulations! All your answers are correct!");
+  }
+}
+
+// Example function that saves userAnswers for future use
+function saveUserAnswers() {
+  // Here you could implement logic to save userAnswers to local storage, a database, or server
+  console.log("User answers saved:", userAnswers);
+  // Example of saving to local storage
+  localStorage.setItem("userAnswers", JSON.stringify(userAnswers));
+}
+
+// Function to generate the quiz dynamically
+function generateQuestion(questions) {
+  selectedCategory = questions
+  questions = selectedCategory.questions
   const quizContainer = document.getElementById('textContainer');
-  quizContainer.innerHTML = ''
+  quizContainer.innerHTML = '';
+
+  const titleText = document.createElement('h1');
+  titleText.textContent = selectedCategory.subConcept;
+
+  const desc = document.createElement('h3');
+  desc.textContent = selectedCategory.explanation;
 
   const form = document.createElement('form');
   form.setAttribute('action', '/submit.test');
-  form.setAttribute('method', 'POST');
+  form.setAttribute('method', 'GET');
 
   questions.forEach((question, index) => {
     const questionDiv = document.createElement('div');
@@ -368,18 +420,22 @@ function generateQuestion(questions) {
         questionDiv.appendChild(document.createElement('br'));
       });
     }
-
-    // Handle short-response questions
+    /*
     if (question.type === 'short-response') {
-      const textInput = document.createElement('input');
-      textInput.setAttribute('type', 'text');
-      textInput.setAttribute('name', `q${index}`);
-      textInput.setAttribute('placeholder', 'Your answer here');
-
-      questionDiv.appendChild(textInput);
+      const input = document.createElement('input');
+      input.setAttribute('type', 'text');
+      input.setAttribute('name', `q${index}`);
+      questionDiv.appendChild(input);
       questionDiv.appendChild(document.createElement('br'));
     }
+      */
 
+    // Create an explanation div for feedback after submission
+    const explanationDiv = document.createElement('div');
+    explanationDiv.setAttribute('id', `explanation-${index}`);
+    explanationDiv.style.marginTop = '10px';
+
+    questionDiv.appendChild(explanationDiv);
     form.appendChild(questionDiv);
     form.appendChild(document.createElement('br'));
   });
@@ -390,16 +446,17 @@ function generateQuestion(questions) {
   submitButton.setAttribute('value', 'Submit Test');
   form.appendChild(submitButton);
 
-
   // Append the form to the quizContainer
+  quizContainer.appendChild(titleText)
+  quizContainer.appendChild(desc)
   quizContainer.appendChild(form);
-  form.addEventListener('submit', checkQuestions)
-
+  
+  // Add event listener to check questions on form submission
+  form.addEventListener('submit', checkQuestions);
 }
 
-// Call the function yo generate the form on page load
+// Call the function to generate the form on page load
 document.addEventListener('DOMContentLoaded', () => {
-  generateQuestion(selectedCategory);
+  const questions = quizzes["SentenceStructure"].subConcepts[0].questions; // Use the first subConcept's questions
+  generateQuestion(questions);
 });
-
-

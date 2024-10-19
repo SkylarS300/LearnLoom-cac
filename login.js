@@ -1,7 +1,5 @@
-// Simulated user database (for demonstration purposes)
 let userDatabase = [
   { email: 'skylar@gmail.com', password: 'password123' },
-  { email: 'user2@example.com', password: 'mypassword' }
 ];
 
 // Define the administrator credentials
