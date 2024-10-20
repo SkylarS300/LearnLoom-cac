@@ -308,8 +308,8 @@ p {
 /* Centered quiz container, ensuring no overlap */
 #textContainer {
   position: absolute; /* Absolute positioning to place it on the right */
-  right: 450px; /* 50px from the right edge */
-  top: 150px; /* Adjust top position as needed */
+  right: 50px; /* 50px from the right edge */
+  top: 100px; /* Adjust top position as needed */
   width: 700px; /* Set a fixed width */
   background-color: white;
   border: 1px solid #ccc;
@@ -317,6 +317,15 @@ p {
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
+}
+
+#quizList {
+  top: 150px; /* Adjust top position as needed */
+  padding: 30px;
+  width: 300px;
+
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 #main-content {
